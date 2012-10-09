@@ -1,4 +1,8 @@
-%define JAVA_HOME=/usr/java/latest
+%define JAVA_HOME /usr/java/latest/
+%define AVALON_HOME /usr/local/avalon/
+%define TOMCAT_HOME %{AVALON_HOME}tomcat/
+%define APR /usr/bin/apr-1-config
+
 
 Name:           tomcat-native
 Version:        1.1.24
@@ -23,7 +27,7 @@ BuildRequires:  openssl-devel
 
 
 %build
-%configure --with-apr=/usr/bin/apr-1-config --with-java-home=/usr/java/latest --with-ssl=yes --prefix=/usr/local/tomcat/
+%configure --with-apr=%{APR} --with-java-home=%{JAVA_HOME} --with-ssl=yes --prefix=%{TOMCAT_HOME}
 make %{?_smp_mflags}
 
 
