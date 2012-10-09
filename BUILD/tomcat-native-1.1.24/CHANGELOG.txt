@@ -1,0 +1,156 @@
+Apache TomcatApache Logo
+
+-------------------------------------------------------------------------------
+
+The Apache Tomcat Native - Miscellaneous Documentation       *
+
+Preface
+    This is the Changelog for Tomcat Native. This changelog
+    does not contain all updates and fixes to the Tomcat
+    Native (yet). It should contain fixes made only after
+    December 19th 2007, when the new documentation project for
+    Tomcat Native was started.
+
+Changes between 1.1.23 and 1.1.24
+    update Add support for per-socket timeouts inside poller.
+           (markt, mturk)
+
+Changes between 1.1.22 and 1.1.23
+    update 45392: Add support for OCSP verification. Based
+           upon a patch from Aristotelis. (mturk)
+
+    fix    52119: Autodetect Diablo JDK on FreeBSD and Java7+.
+           Based upon a patch from Michael Osipov. (mturk)
+
+    fix    52717: Set scope_id for IPv6 addresses if provided.
+           (mturk)
+
+    update 50570: Allow explicit use of FIPS mode in APR
+           lifecycle listener (native support only in this
+           update; Java support to follow). Based upon a patch
+           from Chris Beckey. (schultz)
+
+Changes between 1.1.21 and 1.1.22
+    fix Arrange release packaging script. (jfclere).
+
+    fix Fix typos in the changelog. (markt).
+
+Changes between 1.1.20 and 1.1.21 (not released)
+    fix    50394: InternalAprInputBuffer.fill() doesn't deal
+           correctly with EOF. (jfclere)
+
+    fix    Support arbitrary protocol combinations of SSLv2,
+           SSLv3 and TLSv1. (rjung)
+
+    fix    51437: Try loading certificate in DER format if PEM
+           was invalid. (mturk)
+
+    fix    49557: index error in the loop to get the env info
+           in the proc.create function. (kkolinko, jfclere)
+
+    fix    49851: JNI Registry.deleteKey and
+           Registry.deleteValue corrupt Windows registry.
+           (jfclere)
+
+    fix    48253: adding dynamic locking callbacks for openssl
+           engines. (jfclere)
+
+    update Make the non blocking write really no blocking.
+           (jfclere)
+
+    update Add support for unsafe legacy renegotiation.
+           (mturk)
+
+Changes between 1.1.19 and 1.1.20
+    fix 48584: Prevent crashing JVM on shutdown. (mturk)
+
+Changes between 1.1.18 and 1.1.19
+    fix    Update windows resource files to correct version.
+           (mturk)
+
+    fix    48129: Fix build with OpenSSL 1.0.0-beta3. Patch
+           provided by Tomas Mraz. (mturk, rjung)
+
+    update Add detection of the Mac OS X JVM. (rjung)
+
+Changes between 1.1.17 and 1.1.18
+    fix Fix CVE-2009-3555 SSL-Man-In-The-Middle attack.
+        (mturk)
+
+Changes between 1.1.16 and 1.1.17
+    update Arrange build after svn reorganisation (rjung)
+
+    fix    47852: Fix some Javadoc errors. Patch provided by
+           Sebb. (rjung)
+
+    fix    46950: Fix SSL renegotiation in combination with
+           client certificates. The complete solution also
+           needs a fix in Tomcat's Java code. (markt)
+
+    fix    Align method names and signatures of native C code
+           and java code. (markt, rjung)
+
+    fix    42728: Remove memory leak. (markt)
+
+    fix    46457: Fix use of multicast. (markt)
+
+    fix    Fix API name for recvfrom (mturk)
+
+    fix    Allow building against APR 1.3 (mturk)
+
+    fix    Improve fix for 43327 with better handling for IPv6
+           addresses (markt)
+
+Changes between 1.1.15 and 1.1.16
+    fix Fix API name for recvfrom (mturk)
+
+    fix Allow building against APR 1.3 (mturk)
+
+    fix Improve fix for 43327 with better handling for IPv6
+        addresses (markt)
+
+Changes between 1.1.14 and 1.1.15
+    fix 43327: Socket bind fail because mixing IPv4/IPv6
+        (markt, jfclere)
+
+    fix 44864: Use additional check for SSL verify like with
+        mod_ssl for SSLVerifyClient=optionalNoCA. (mturk)
+
+Changes between 1.1.13 and 1.1.14
+    fix 45071: Reset ttl when Poll.pool remove is false.
+        Additional patch was provided by Alex Barclay. (mturk)
+
+    fix Fix optGet that was always throwing exceptions.
+        (jfclere)
+
+    fix Fix optSet don't throw exception as JAVA prototype
+        doesn't. (jfclere)
+
+Changes between 1.1.12 and 1.1.13
+    fix IFS problem in native/build/tcnative.m4 (rjung)
+
+    fix Wrong gcc link flag in native/build/tcnative.m4
+        (rjung)
+
+Changes between 1.1.11 and 1.1.12
+    update Add support of J9VM based JVM. (jfclere)
+
+    update Arrange licence in source files. (markt)
+
+    update Add two new 'immediate' methods for sending the
+           data. It is the responsibility of the Java callee
+           to deal with the returned values and retry if the
+           error was non-fatal. (mturk)
+
+    fix    Arrange the check of openssl version. It was
+           failing on Linux. (jfclere)
+
+    fix    Prevent returning APR_SUCCESS when there is
+           something wrong in ssl layer. (jfclere)
+
+    fix    44087: Fix it. (jfclere)
+
+-------------------------------------------------------------------------------
+
+               Copyright © 2008-2012, Apache Software Foundation
+
