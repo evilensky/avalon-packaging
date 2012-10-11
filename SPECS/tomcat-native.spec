@@ -17,7 +17,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  apr-devel 
 BuildRequires:  openssl-devel
-#Requires:       tomcat 
+Requires:       tomcat
+Requires:       jdk
 
 %description
 
