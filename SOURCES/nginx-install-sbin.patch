@@ -1,0 +1,14 @@
+diff --git a/auto/install b/auto/install
+index f876891..0dd08c5 100644
+--- a/auto/install
++++ b/auto/install
+@@ -80,9 +80,6 @@ install:	$NGX_OBJS${ngx_dirsep}nginx${ngx_binext} \
+ 
+ 	test -d '\$(DESTDIR)`dirname "$NGX_SBIN_PATH"`' \
+ 		|| mkdir -p '\$(DESTDIR)`dirname "$NGX_SBIN_PATH"`'
+-	test ! -f '\$(DESTDIR)$NGX_SBIN_PATH' \
+-		|| mv '\$(DESTDIR)$NGX_SBIN_PATH' \
+-			'\$(DESTDIR)$NGX_SBIN_PATH.old'
+ 	cp $NGX_OBJS/nginx '\$(DESTDIR)$NGX_SBIN_PATH'
+ 
+ 	test -d '\$(DESTDIR)$NGX_CONF_PREFIX' \
