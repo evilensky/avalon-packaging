@@ -1,12 +1,12 @@
-%define JAVA_HOME /usr/java/latest/
-%define AVALON_HOME /usr/local/avalon/
+%define JAVA_HOME /usr/lib/jvm/java/
+%define AVALON_HOME /usr/local/
 %define TOMCAT_HOME %{AVALON_HOME}tomcat/
 %define APR /usr/bin/apr-1-config
 
 
 Name:           tomcat-native
 Version:        1.1.24
-Release:        avalon%{?dist}
+Release:        1%{?dist}
 Summary:        Tomcat Native integration for RHEL6 Apache
 
 Group:          Avalon Project Team
@@ -17,8 +17,10 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  apr-devel 
 BuildRequires:  openssl-devel
+BuildRequires:  java-1.6.0-sun-devel
 Requires:       tomcat
-Requires:       jdk
+Requires:       java-1.6.0-sun
+#Requires:       
 
 %description
 

@@ -16,18 +16,11 @@
 
 ## Source function library.
 #. /etc/rc.d/init.d/functions
-export JAVA_HOME=/usr/java/default
-export JAVA_OPTS="-Dfile.encoding=UTF-8 \
-  -Dcatalina.logbase=/var/log/tomcat7 \
-  -Dnet.sf.ehcache.skipUpdateCheck=true \
-  -XX:+DoEscapeAnalysis \
-  -XX:+UseConcMarkSweepGC \
-  -XX:+CMSClassUnloadingEnabled \
-  -XX:+UseParNewGC \
-  -XX:MaxPermSize=128m \
-  -Xms512m -Xmx512m"
-export PATH=$JAVA_HOME/bin:$PATH
-TOMCAT_HOME=/usr/local/avalon/tomcat
+. /etc/rc.d/init.d/functions
+
+[ -f /etc/sysconfig/tomcat ] && . /etc/sysconfig/tomcat
+
+TOMCAT_HOME=/usr/local/tomcat
 SHUTDOWN_WAIT=20
 
 tomcat_pid() {

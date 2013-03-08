@@ -1,0 +1,11 @@
+export JAVA_HOME=/usr/lib/jvm/java
+export JAVA_OPTS="-Dfile.encoding=UTF-8 \
+  -Dcatalina.logbase=/var/log/tomcat7 \
+  -Dnet.sf.ehcache.skipUpdateCheck=true \
+  -XX:+DoEscapeAnalysis \
+  -XX:+UseConcMarkSweepGC \
+  -XX:+CMSClassUnloadingEnabled \
+  -XX:+UseParNewGC \
+  -XX:MaxPermSize=128m \
+  -Xms512m -Xmx512m"
+export PATH=$JAVA_HOME/bin:$PATH
